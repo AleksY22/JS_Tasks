@@ -76,3 +76,58 @@ function randomInteger(min, max) {
 }
 */
 
+/*
+//==============Сделать первый символ заглавным==================
+function ucFirst(str) {
+   if (!str) return str;
+
+   return str[0].toUpperCase() + str.slice(1);
+}
+
+console.log(ucFirst("вася"));
+*/
+
+/*
+//===================Усечение строки============================
+function truncate(str, maxlength) {
+   return (str.length > maxlength) ?
+      str.slice(0, maxlength - 1) + '…' : str;
+}
+console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+*/
+
+/*
+//===================Подмассив наибольшей суммы==================
+arr = [1, -2, 3, 4, -9, 6];
+//Медленное решение
+function getMaxSubSum(arr) {
+   let maxSum = 0; // если элементов не будет - возвращаем 0
+ 
+   for (let i = 0; i < arr.length; i++) {
+     let sumFixedStart = 0;
+     for (let j = i; j < arr.length; j++) {
+       sumFixedStart += arr[j];
+       maxSum = Math.max(maxSum, sumFixedStart);
+     }
+   }
+ 
+   return maxSum;
+ }
+*/
+/*
+ //Быстрое решение
+ function getMaxSubSum(arr) {
+   let maxSum = 0;
+   let partialSum = 0;
+ 
+   for (let item of arr) { // для каждого элемента массива
+     partialSum += item; // добавляем значение элемента к partialSum
+     maxSum = Math.max(maxSum, partialSum); // запоминаем максимум на данный момент
+     if (partialSum < 0) partialSum = 0; // ноль если отрицательное
+   }
+ 
+   return maxSum;
+ }
+*/
+
+
